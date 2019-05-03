@@ -116,11 +116,11 @@ def parse_cmdline():
                         dest='outfile_name',
                         default=None,
                         help='Out-file. [default: "stdout"]')
-    # parser.add_argument('--hello',
-    #                     action="store_true",
-    #                     dest='hello',
-    #                     default=False,
-    #                     help='Say Hello.')
+    parser.add_argument('--hello',
+                         action="store_true",
+                         dest='hello',
+                         default=False,
+                         help='Say Hello.')
 
     # if no arguments supplied print help
     if len(sys.argv) == 1:
@@ -150,10 +150,10 @@ def main():
     """ The main funtion. """
     args, parser = parse_cmdline()
 
-    # ## new feature
-    # if args.hello:
-    #     sys.stdout.write("Hello and exit!\n")
-    #     sys.exit(0)
+    ## new feature
+    if args.hello:
+         sys.stdout.write("Hello and exit!\n")
+         sys.exit(0)
 
     try:
         fileobj = load_file(args.str_file)
